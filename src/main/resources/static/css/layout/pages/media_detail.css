@@ -1,0 +1,30 @@
+.headMedia {
+    background-color: black;
+    border-radius: 10px;
+    height: 500px;
+}
+
+.titleMedia {
+    color: white;
+    font-size: 2vw;
+    margin-left: 1vw;
+}
+
+.summaryMedia {
+    margin-left: 1vw;
+    font-size: 1vw;
+    color: grey;
+}
+
+.trailerMedia {
+    width: 95%;
+    height: 47.5vh;
+    margin-top: 2%;
+}
+
+.bodyMedia {
+    background-color: #454444;
+    height: 500px;
+    border-radius: 10px;
+}
+

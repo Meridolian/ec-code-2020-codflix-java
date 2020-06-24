@@ -1,8 +1,23 @@
 #parse("dashboard.html")
 #@mainLayout()
-Medias
 
-<h1>Media Detail</h1>
-<div>$media.getTitle()</div>
+<div class="headMedia">
+    <div class="row">
+        <div class="col" style="max-width: 40%;">
+            <div class="row">
+                <label class="col titleMedia">$media.getTitle().toUpperCase()</label>
+            </div>
+            <div class="row">
+                <label class="col summaryMedia">$media.getSummary()</label>
+            </div>
+        </div>
+        <div class="col" style="text-align: center; max-width: 60%;">
+            <iframe class="col trailerMedia" allowfullscreen="" frameborder="0" src="$media.getTrailerUrl()"></iframe>
+        </div>
+    </div>
+</div>
+<div class="bodyMedia">
+
+</div>
 
 #end

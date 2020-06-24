@@ -22,7 +22,7 @@ public class HistoryController {
         List<History> histories;
 
         Session session = request.session(true);
-        String userIdStr = session.attribute("user_id");
+        String userIdStr = session.attribute("user_id").toString();
         if (userIdStr == null || userIdStr.isEmpty()) {
             Spark.halt(401, "No user id provded to see history");
         }

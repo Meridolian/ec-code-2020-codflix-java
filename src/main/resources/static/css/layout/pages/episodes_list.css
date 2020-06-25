@@ -1,0 +1,20 @@
+
+
+.seasons {
+    background-color: #1f1f1f;
+    border-radius: 15px 15px 0 0;
+}
+
+.season {
+    text-align: center;
+    margin: 1%;
+    font-size: 25px;
+}
+
+.episodes {
+    align-items: center;
+    background-color: #454444;
+    padding-left: 1.5%;
+    padding-top: 1.5%;
+    padding-bottom: 1%;
+}

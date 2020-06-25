@@ -61,7 +61,7 @@ public class AuthController {
         String password = query.get("password");
         String password_confirm = query.get("password_confirm");
         if(!password.equals(password_confirm)){
-            return "KO : " + password + " " + password_confirm;
+            return "KO";
         }
 
         User user = userDao.createUser(email, password);

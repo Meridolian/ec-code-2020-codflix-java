@@ -3,9 +3,7 @@
 
 #set($media = 0)
 #foreach($episodes in $seasons.values())
-    #foreach($episode in $episodes)
-        #set($media = $episode.getMedia_id())
-    #end
+    #set($media = $episodes.get(0).getMedia_id())
 #end
 <div class="seasons">
     <div class="row">

@@ -18,25 +18,18 @@ public class EpisodeController {
 
     public String listEpisodes(Request request, Response response) {
         List<Episode> episodes;
-        List<Integer> allSeasons;
+        List<Integer> seasons;
 
         int media = Integer.parseInt(request.params(":media"));
 
         int season = Integer.parseInt(request.params(":season"));
 
-        allSeasons = episodeDao.getSeasons(media);
+        seasons = episodeDao.getSeasons(media);
 
         episodes = episodeDao.getEpisodeBySeason(season);
 
-        // Créer une liste de contenu unique basée sur les éléments de ArrayList
-        Set<Integer> seasons = new HashSet<>(allSeasons);
-
-        // Créer une Nouvelle ArrayList à partir de Set
-        List<Integer> seasonsFinal = new ArrayList<>(seasons);
-
-
         HashMap<Object, Object> episodesBySeason = new HashMap<>();
-        episodesBySeason.put(seasonsFinal, episodes);
+        episodesBySeason.put(seasons, episodes);
 
         System.out.println(episodesBySeason);
 

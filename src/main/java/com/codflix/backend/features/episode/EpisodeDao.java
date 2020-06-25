@@ -37,7 +37,7 @@ public class EpisodeDao {
 
         Connection connection = Database.get().getConnection();
         try {
-            PreparedStatement st = connection.prepareStatement("SELECT season_number FROM episode WHERE media_id=?");
+            PreparedStatement st = connection.prepareStatement("SELECT season_number FROM episode WHERE media_id=? GROUP BY season_number");
             st.setInt(1, id);
             ResultSet rs = st.executeQuery();
             while(rs.next()){

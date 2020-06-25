@@ -13,7 +13,7 @@ public class ContactController {
     public String getContact(Request request, Response response) {
         boolean logged;
 
-        // If there is an active session, redirect to the logged root route
+        // If there is an active session, changes the view html view
         Session session = request.session(false);
         if (session != null) {
             logged = true;

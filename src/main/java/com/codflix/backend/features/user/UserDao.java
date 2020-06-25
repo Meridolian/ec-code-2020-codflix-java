@@ -3,6 +3,7 @@ package com.codflix.backend.features.user;
 import com.codflix.backend.core.Database;
 import com.codflix.backend.models.User;
 
+import javax.xml.crypto.Data;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,6 +24,27 @@ public class UserDao {
             if (rs.next()) {
                 user = mapToUser(rs);
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return user;
+    }
+
+    public User createUser(String email, String password){
+        User user = null;
+
+        Connection connection = Database.get().getConnection();
+        try {
+            PreparedStatement st = connection.prepareStatement("INSERT INTO user(email, password) VALUES (?,?)");
+            st.setString(1, email);
+            st.setString(2, password);
+
+            int rs = st.executeUpdate();
+            if(rs == 1) {
+                user = this.getUserByCredentials(email, password);
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

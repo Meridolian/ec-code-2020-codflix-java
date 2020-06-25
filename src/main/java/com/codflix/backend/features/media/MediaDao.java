@@ -34,7 +34,8 @@ public class MediaDao {
 
         Connection connection = Database.get().getConnection();
         try {
-            PreparedStatement st = connection.prepareStatement("SELECT * FROM media WHERE title=? ORDER BY release_date DESC");
+            PreparedStatement st = connection.prepareStatement("SELECT * FROM media WHERE title LIKE ? ORDER BY release_date DESC");
+            title = '%' + title + '%';
             st.setString(1, title);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {

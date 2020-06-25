@@ -1,7 +1,7 @@
 .headMedia {
     background-color: black;
-    border-radius: 10px;
-    height: 500px;
+    border-radius: 15px;
+    height: 85vh;
 }
 
 .titleMedia {
@@ -28,3 +28,6 @@
     border-radius: 10px;
 }
 
+.episodesButton {
+    margin: 25px;
+}

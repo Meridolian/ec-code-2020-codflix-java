@@ -1,0 +1,39 @@
+#parse("dashboard.html")
+#@mainLayout()
+
+
+
+<!-- #foreach($episode in $episodes)
+    <div class="seasons">
+        <div class="row">
+            #if($episode.getId() == 1)
+            <div class="col">
+                <label>Saison $episode.getSeason_number()</label>
+            </div>
+            #end
+            #if($episode.getId() > 1)
+                #if($episode.getSeason_number() > $episodes[$episode.getIdMinusOne()].getSeason_number())
+                    <div class="col">
+                        <label>Saison $episode.getSeason_number()</label>
+                    </div>
+                #end
+            #end
+        </div>
+    </div>
+    #end -->
+
+<div class="media-list">
+    #foreach($episode in $episodes)
+    <div class="item">
+        <div class="video">
+            <div>
+                <iframe allowfullscreen="" frameborder="0" src="$episode.getTrailer_url()"></iframe>
+            </div>
+        </div>
+        <div class="title">
+            Saison $episode.getSeason_number() | $episode.getTitle()
+        </div>
+    </div>
+    #end
+</div>
+#end
